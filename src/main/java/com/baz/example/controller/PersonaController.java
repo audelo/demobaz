@@ -23,7 +23,6 @@ public class PersonaController
 	@Value("${mensaje}")
     private String saludo;
 	
-	@HystrixCommand(fallbackMethod = "getMxHystrixFallbackMethod")
 	@RequestMapping("/persona/list")
 	public List<Persona> list()
 	{
