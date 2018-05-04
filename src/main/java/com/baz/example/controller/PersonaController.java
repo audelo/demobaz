@@ -20,8 +20,7 @@ public class PersonaController
 	PersonaBO personaBO;
 	private static final Logger log = Logger.getLogger(PersonaController.class.getName());
 	
-	@Value("${mensaje}")
-    private String saludo;
+	
 	
 	@RequestMapping("/persona/list")
 	public List<Persona> list()
@@ -29,18 +28,6 @@ public class PersonaController
 		log.info(">>>Consumiendo Servicio GET LISTA PERSONAS<<<");
 		return personaBO.list();
 	}
-	
-	
-	@RequestMapping(value = "/saludar", method = RequestMethod.GET)
-    public String getUserAdmins() 
-	{
-		log.info(">>>Consumiendo Servicio GET SALUDAR<<<");
-        return saludo;
-    }
-	
-	
-	
-	
 	
 	private String getMxHystrixFallbackMethod()
 	{
