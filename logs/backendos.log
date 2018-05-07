@@ -20,3 +20,4 @@
 2018-04-27 09:57:56,053 INFO  (http-nio-2222-exec-3) PersonaController:38- >>>Consumiendo Servicio GET SALUDAR<<<
 2018-04-27 10:09:02,571 INFO  (http-nio-2222-exec-1) PersonaController:38- >>>Consumiendo Servicio GET SALUDAR<<<
 2018-04-27 10:09:54,174 INFO  (http-nio-2222-exec-2) PersonaController:38- >>>Consumiendo Servicio GET SALUDAR<<<
+2018-05-07 11:02:37,212 INFO  (http-nio-8000-exec-1) PersonaController:28- >>>Consumiendo Servicio GET LISTA PERSONAS<<<
