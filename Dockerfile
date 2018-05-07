@@ -1,6 +1,6 @@
 FROM gradle:4.2.1-jdk8-alpine
 
-COPY --chown=gradle:gradle . /home/gradle/src
+COPY . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN pwd
 RUN ls -l
