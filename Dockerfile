@@ -10,7 +10,7 @@ COPY \
 RUN ./gradlew
 RUN pwd
 RUN ls -l
-RUN ./gradlew build docker --stacktrace
+RUN gradle build docker
 
 COPY build/docker/corebaz-1.0.0.jar corebaz-1.0.0.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/corebaz-1.0.0.jar"]

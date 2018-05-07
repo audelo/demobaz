@@ -43,7 +43,6 @@ repositories {
 
 docker {
     dependsOn build
-    dockerfile = file('src/main/resource/Dockerfile')
     name "${project.group}/${bootJar.baseName}"
     files bootJar.archivePath
     buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
