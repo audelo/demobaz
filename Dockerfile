@@ -4,7 +4,7 @@ COPY . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN pwd
 RUN ls -l
-RUN gradle build
+RUN ./gradlew build
 RUN ls -l
 
 COPY build/libs/corebaz-1.0.0.jar corebaz-1.0.0.jar
