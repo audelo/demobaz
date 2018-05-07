@@ -13,7 +13,8 @@ COPY \
   ./
 
 # Install the gradle version used in the repository through gradlew
-RUN ./gradlew build
+RUN ./gradlew
+RUN gradle build
 
 
 COPY build/libs/corebaz-1.0.0.jar corebaz-1.0.0.jar
