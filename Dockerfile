@@ -2,8 +2,8 @@ FROM openjdk:8-jdk-alpine
 
 
 # Install the gradle version used in the repository through gradlew
-RUN mkdir /usr/lib/gradle
-RUN cd /usr/lib/gradle
+RUN mkdir /usr/lib/gradle/
+RUN cd /usr/lib/gradle/
 RUN ./gradlew
 RUN pwd
 RUN ls -l
