@@ -1,5 +1,20 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} corebaz-1.0.0.jar
+WORKDIR /app
+
+# Copying all gradle files necessary to install gradle with gradlew
+COPY gradle gradle
+COPY \
+  ./gradle \
+  build.gradle \
+  gradle.properties \
+  gradlew \
+  settings.gradle \
+
+  ./
+
+# Install the gradle version used in the repository through gradlew
+RUN ./gradlew build
+
+
+COPY build/libs/corebaz-1.0.0.jar corebaz-1.0.0.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/corebaz-1.0.0.jar"]
