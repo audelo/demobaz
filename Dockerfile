@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-WORKDIR /app
+
 
 # Copying all gradle files necessary to install gradle with gradlew
 COPY gradle gradle
