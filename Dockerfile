@@ -1,8 +1,6 @@
 FROM gradle:4.2.1-jdk8-alpine
 
 RUN pwd
-RUN ls -l /home/gradle/src/
-
 COPY . /home/gradle/src
 
 RUN ls -l /home/gradle/src/
