@@ -4,7 +4,8 @@ COPY . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN pwd
 RUN ls -l
-RUN chmod -R 777 ./gradlew
+RUN chmod 777 gradlew
+RUN ls -ls
 RUN ./gradlew build
 RUN ls -l
 RUN ls -l build/libs/
