@@ -1,13 +1,15 @@
 FROM gradle:4.2.1-jdk8-alpine
 
 RUN pwd
-RUN ls -l /home/gradle/src
+RUN ls -l /home/gradle/src/
 
 COPY . /home/gradle/src
 
-RUN ls -l /home/gradle/src
+RUN ls -l /home/gradle/src/
 
 WORKDIR /home/gradle/src
+RUN rm -R build
+RUN ls -l
 
 USER root
 RUN chmod -R 777 gradlew
