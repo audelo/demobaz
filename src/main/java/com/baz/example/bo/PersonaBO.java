@@ -27,6 +27,7 @@ public class PersonaBO
 		personas.add(p1);
 		personas.add(p1);
 		personas.add(p1);
+		personas.add(p1);
 		
 		return personas;
 	}

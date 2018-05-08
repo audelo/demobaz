@@ -5,8 +5,12 @@ WORKDIR /home/gradle/src
 
 USER root
 RUN chmod -R 777 gradlew
+RUN ls -l
 RUN ./gradlew build
 
+USER gradle
+
+RUN ls -l
 RUN ls -l build/libs/
 
 RUN ls -l /
