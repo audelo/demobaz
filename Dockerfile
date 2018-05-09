@@ -12,7 +12,9 @@ USER root
 RUN chmod -R 777 gradlew
 RUN ls -l
 RUN ./gradlew build
+USER gradle
 COPY build/libs/corebaz-1.0.0.jar /corebaz-1.0.0.jar
+USER root
 RUN rm -R .
 
 USER gradle
