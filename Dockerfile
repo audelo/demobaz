@@ -14,7 +14,8 @@ RUN ls -l
 RUN ./gradlew build
 RUN pwd
 RUN ls -l
-COPY /home/gradle/src/build/libs/corebaz-1.0.0.jar /corebaz-1.0.0.jar
+RUN ls build/libs/
+COPY build/libs/corebaz-1.0.0.jar /corebaz-1.0.0.jar
 
 RUN rm -R .
 
