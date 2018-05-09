@@ -6,7 +6,6 @@ COPY . /home/gradle/src
 RUN ls -l /home/gradle/src/
 
 WORKDIR /home/gradle/src
-RUN rm -R build
 RUN ls -l
 
 USER root
