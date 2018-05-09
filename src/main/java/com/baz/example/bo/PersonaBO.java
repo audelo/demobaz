@@ -26,8 +26,6 @@ public class PersonaBO
 		List<Persona> personas = new ArrayList<Persona>();
 		personas.add(p1);
 		personas.add(p1);
-		personas.add(p1);
-		personas.add(p1);
 		
 		return personas;
 	}
