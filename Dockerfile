@@ -1,4 +1,4 @@
-FROM gradle:4.2.1-jdk8-alpine
+FROM gradle:4.7-jdk8-alpine
 
 RUN pwd
 COPY . /home/gradle/src
