@@ -17,7 +17,7 @@ RUN ls -l
 RUN ls build/libs/
 RUN cp build/libs/corebaz-1.0.0.jar /corebaz-1.0.0.jar
 
-RUN rm -f -R /home/gradle/
+RUN rm -f -R /home/gradle/src/
 
 USER gradle
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/corebaz-1.0.0.jar"]
