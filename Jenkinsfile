@@ -1,7 +1,10 @@
 pipeline {
-    agent none
-
     stages {
+
+        tools {
+          gradle "gradle-4.0"
+        }
+          
         stage('Build Artifacto (JAR)') 
         {
             agent { label 'gradle' }
