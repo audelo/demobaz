@@ -9,7 +9,7 @@ pipeline {
             steps 
             {
                 checkout scm
-                sh "./gradlew build --stacktrace"
+                sh "gradle build --stacktrace"
                 sh 'jarFile=`ls build/libs | grep -v original` && mkdir -p ocp/deployments && cp build/libs/$jarFile ocp/deployments/'
             }
         }
