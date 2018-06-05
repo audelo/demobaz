@@ -4,11 +4,9 @@ pipeline {
         tools {
           gradle "gradle-4.0"
         }
-          
+
         stage('Build Artifacto (JAR)') 
         {
-            agent { label 'gradle' }
-            
             steps 
             {
                 checkout scm
@@ -18,7 +16,6 @@ pipeline {
         }
         stage('Build image for Docker') 
         {
-            agent { label 'gradle' }
             steps {
                 script {
                     openshift.withCluster() {
