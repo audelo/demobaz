@@ -1,10 +1,6 @@
 pipeline {
     agent none
 
-    stage('Clonando proyecto fuente demobaz') {
-        git url: 'https://github.com/audelo/demobaz.git'
-    }
-
     stages {
         stage('Build Artifacto (JAR)') 
         {

@@ -14,7 +14,7 @@ items:
     failedBuildHistoryLimit: 2
     source:
       git:
-        uri: https://github.com/audelo/demobaz.git
+        uri: http://gogs-cicd.apps.openshift-lab.com/moloa/demobaz.git
       type: Git
     strategy:
       type: JenkinsPipeline
