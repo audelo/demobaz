@@ -1,26 +1,15 @@
-pipeline {
-    agent none
-
-    stage('Clonando proyecto fuente demobaz') {
-        git url: 'https://github.com/audelo/demobaz.git'
-    }
-
-    stages {
+node('gradle') {
         stage('Build Artifacto (JAR)') 
         {
-            agent { label 'gradle' }
             
-            steps 
-            {
-                checkout scm
+                git url: "https://github.com/audelo/demobaz.git"
                 sh "./gradlew build --stacktrace"
                 sh 'jarFile=`ls build/libs | grep -v original` && mkdir -p ocp/deployments && cp build/libs/$jarFile ocp/deployments/'
-            }
+            
         }
         stage('Build image for Docker') 
         {
-            agent { label 'gradle' }
-            steps {
+
                 script {
                     openshift.withCluster() {
                         openshift.withProject('demobaz-env-qa') {
@@ -41,7 +30,7 @@ pipeline {
                         }
                     }
                 }
-            }
+            
         }
         stage('QA') 
         {
@@ -83,4 +72,7 @@ pipeline {
             }
         }
     }
-}
+
+
+/home/jenkins/workspace/cicd/cicd-demobaz-pipeline
+  

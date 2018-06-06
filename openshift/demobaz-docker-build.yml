@@ -39,12 +39,3 @@ objects:
         memory: 512MB
     runPolicy: Serial
     successfulBuildsHistoryLimit: 5
-parameters:
-- displayName: demobaz-deploy-cicd-qa
-  name: demobaz-cicd-services
-  required: true
-  value: demobaz-env-qa
-- displayName: demobaz-deploy-cicd-prod
-  name: IMAGE_STREAM_NAMESPACE
-  required: true
-  value: demobaz-env-prod
