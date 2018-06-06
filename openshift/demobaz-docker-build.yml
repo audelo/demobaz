@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Template
+metadata:
+  annotations:
+    iconClass: icon-java
+  labels:
+    app: demobaz-cicd-docker
+    build: demobaz-cicd-docker
+  name: demobaz-cicd-docker-template
+objects:
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    name: demobaz-cicd-docker
+    labels:
+      app: demobaz-cicd-docker
+  spec: {}
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    labels:
+      build: demobaz-cicd-docker
+      app: demobaz-cicd-docker
+    name: demobaz-cicd-docker
+  spec:
+    failedBuildsHistoryLimit: 5
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: demobaz-cicd:latest
+    postCommit: {}
+    resources: 
+      requests:
+        cpu: 100m
+        memory: 128MB
+      limits:
+        cpu: 500m
+        memory: 512MB
+    runPolicy: Serial
+    successfulBuildsHistoryLimit: 5
+parameters:
+- displayName: demobaz-deploy-cicd-qa
+  name: demobaz-cicd-services
+  required: true
+  value: demobaz-env-qa
+- displayName: demobaz-deploy-cicd-prod
+  name: IMAGE_STREAM_NAMESPACE
+  required: true
+  value: demobaz-env-prod

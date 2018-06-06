@@ -1,21 +1,25 @@
 pipeline {
+    agent none
+
+    stage('Clonando proyecto fuente demobaz') {
+        git url: 'https://github.com/audelo/demobaz.git'
+    }
+
     stages {
-
-        tools {
-          gradle "gradle-4.0"
-        }
-
         stage('Build Artifacto (JAR)') 
         {
+            agent { label 'gradle' }
+            
             steps 
             {
                 checkout scm
-                sh "gradle build --stacktrace"
+                sh "./gradlew build --stacktrace"
                 sh 'jarFile=`ls build/libs | grep -v original` && mkdir -p ocp/deployments && cp build/libs/$jarFile ocp/deployments/'
             }
         }
         stage('Build image for Docker') 
         {
+            agent { label 'gradle' }
             steps {
                 script {
                     openshift.withCluster() {
