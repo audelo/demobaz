@@ -1,5 +1,7 @@
 FROM gradle:4.7-jdk8-alpine
 
+HEALTHCHECK --interval=5s --timeout=3s CMD curl --fail http://localhost:9000/demobaz/persona/list || exit 1
+
 RUN pwd
 COPY . /home/gradle/src
 
